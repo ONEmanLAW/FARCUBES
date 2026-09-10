@@ -1,12 +1,10 @@
 using UnityEngine;
 
-public class BlueBullet : MonoBehaviour
+// Balle lente, trajectoire droite.
+public class BlueBullet : Bullet
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private Vector3 direction = Vector3.down;
-
-    private void Update()
+    protected override Vector3 GetPosition(float time)
     {
-        transform.position += direction.normalized * (speed * Time.deltaTime);
+        return GetForwardPosition(time);
     }
 }
