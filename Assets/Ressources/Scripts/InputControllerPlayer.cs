@@ -2,23 +2,29 @@ using UnityEngine;
 
 public class InputControllerPlayer : MonoBehaviour
 {
-    //public float speed = 1;
-    public Player player;
+    [SerializeField] private Player player;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        //float moveX = 0f;
+        if (player == null)
+            player = GetComponent<Player>();
 
-        if(Input.GetKey(KeyCode.RightArrow))
-        {
-            player.Move(1f);
-        }
-        else if(Input.GetKey(KeyCode.LeftArrow))
-        {
-            player.Move(-1f);
-        }
+        if (player == null)
+            Debug.LogError($"{name} : aucun Player assigne.");
+    }
 
-        
+    private void Update()
+    {
+        if (player == null)
+            return;
+
+        float moveZ = 0f;
+
+        if (Input.GetKey(KeyCode.RightArrow))
+            moveZ = 1f;
+        else if (Input.GetKey(KeyCode.LeftArrow))
+            moveZ = -1f;
+
+        player.Move(moveZ);
     }
 }

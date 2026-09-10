@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sheriff
   stats: {fileID: 11400000, guid: 38e20b57b2a17478289221cdb9b4db78, type: 2}
-  startDelay: 3
+  startDelay: 1
 --- !u!4 &1561398632
 Transform:
   m_ObjectHideFlags: 0
