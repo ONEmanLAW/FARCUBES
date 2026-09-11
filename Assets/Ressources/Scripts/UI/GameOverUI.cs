@@ -33,4 +33,9 @@ public class GameOverUI : MonoBehaviour
         // Securite : si une partie precedente a laisse le jeu fige.
         Time.timeScale = 1f;
     }
+    public void Restart()
+    {
+        // Recharger la scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }
