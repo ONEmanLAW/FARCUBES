@@ -48,18 +48,11 @@ public class Sheriff : MonoBehaviour
             return;
 
         Instantiate(prefab, transform.position, Quaternion.identity);
-        PlayFireSound();
-    }
-
-    private void PlayFireSound()
-    {
-        AudioClip clip = stats.GetRandomFireSound();
-        if (clip == null)
-            return;
 
         // PlayOneShot plutot que Play : les tirs se superposent
         // au lieu de se couper les uns les autres.
-        audioSource.pitch = stats.GetRandomPitch();
-        audioSource.PlayOneShot(clip, stats.Volume);
+        AudioClip clip = stats.GetRandomFireSound();
+        if (clip != null)
+            audioSource.PlayOneShot(clip);
     }
 }
