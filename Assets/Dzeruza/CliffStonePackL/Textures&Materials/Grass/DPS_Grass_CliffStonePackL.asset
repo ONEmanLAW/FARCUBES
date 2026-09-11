@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2686e09ec7aef44bad2843e4416f057, type: 3}
+  m_Name: DPS_Grass_CliffStonePackL
+  m_EditorClassIdentifier: 
+  profile:
+    scatteringDistance: {r: 0.70569694, g: 1, b: 0.119611494, a: 1}
+    scatteringDistanceMultiplier: 0.1
+    transmissionTint: {r: 1, g: 0.9159395, b: 0.79559743, a: 1}
+    texturingMode: 0
+    smoothnessMultipliers: {x: 1, y: 1}
+    lobeMix: 0.5
+    diffuseShadingPower: 2.662
+    transmissionMode: 1
+    thicknessRemap: {x: 0, y: 13.498594}
+    worldScale: 0.1
+    ior: 1.352
+    hash: 1079664070
+  m_Version: 2

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d0ce722cb184e3046af6facf1d65ebcf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 15600000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327620
+  packageName: CliffStonePackL
+  packageVersion: 1.0
+  assetPath: Assets/Dzeruza/CliffStonePackL/Scenes/DemoSceneA/TerrainData_CliffStonePackL_A.asset
+  uploadId: 783884
