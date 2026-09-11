@@ -4,7 +4,7 @@ public abstract class Bullet : MonoBehaviour
 {
     [SerializeField] protected BulletStats stats;
     [SerializeField] protected WorldStats worldStats;
-    [SerializeField] protected Vector3 direction = Vector3.left;
+    [SerializeField] protected Vector3 direction = Vector3.right;
 
     protected Vector3 origin;
     protected Vector3 velocity;
@@ -22,11 +22,12 @@ public abstract class Bullet : MonoBehaviour
         origin = transform.position;
         elapsed = 0f;
 
-        // La balle herite de la vitesse de la map, comme le sherif qui l'a tiree.
-        // Sans ca, une balle a la vitesse de la map reste collee au canon.
-        Vector3 mapVelocity = worldStats != null ? worldStats.Velocity : Vector3.zero;
+        // On ajoute la vitesse de la map a celle de la balle.
+        // Resultat : le champ Speed du SO est la vitesse VISIBLE a l'ecran,
+        // peu importe la vitesse de defilement du monde.
+        float mapSpeed = worldStats != null ? worldStats.Speed : 0f;
 
-        velocity = direction.normalized * stats.Speed + mapVelocity;
+        velocity = direction.normalized * (stats.Speed + mapSpeed);
     }
 
     protected virtual void Update()

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WorldStats
   m_EditorClassIdentifier: Assembly-CSharp::WorldStats
   speed: 5
-  direction: {x: -1, y: 0, z: 0}
+  direction: {x: 1, y: 0, z: 0}
