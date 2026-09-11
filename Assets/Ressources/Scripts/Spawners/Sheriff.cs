@@ -5,8 +5,9 @@ public class Sheriff : MonoBehaviour
 {
     [SerializeField] private SheriffStats stats;
 
-    // Reste dans le composant, pas dans le SO : sinon tous les sherifs
-    // partageant le meme asset tireraient sur la meme frame.
+    // Decoche quand un SheriffGroup pilote ce sherif :
+    // sinon les deux logiques de tir se cumulent.
+    [SerializeField] private bool autoFire = true;
     [SerializeField] private float startDelay;
 
     private AudioSource audioSource;
@@ -31,6 +32,9 @@ public class Sheriff : MonoBehaviour
 
     private void Update()
     {
+        if (!autoFire)
+            return;
+
         cooldown -= Time.deltaTime;
         if (cooldown > 0f)
             return;
@@ -43,6 +47,9 @@ public class Sheriff : MonoBehaviour
 
     public void Fire()
     {
+        if (stats == null)
+            return;
+
         Bullet prefab = stats.GetRandomBullet();
         if (prefab == null)
             return;
