@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Bullet : MonoBehaviour
 {
     [SerializeField] protected BulletStats stats;
+    [SerializeField] protected WorldStats worldStats;
     [SerializeField] protected Vector3 direction = Vector3.left;
 
     protected Vector3 origin;
@@ -23,9 +24,7 @@ public abstract class Bullet : MonoBehaviour
 
         // La balle herite de la vitesse de la map, comme le sherif qui l'a tiree.
         // Sans ca, une balle a la vitesse de la map reste collee au canon.
-        Vector3 mapVelocity = MapScroller.Instance != null
-            ? MapScroller.Instance.Velocity
-            : Vector3.zero;
+        Vector3 mapVelocity = worldStats != null ? worldStats.Velocity : Vector3.zero;
 
         velocity = direction.normalized * stats.Speed + mapVelocity;
     }

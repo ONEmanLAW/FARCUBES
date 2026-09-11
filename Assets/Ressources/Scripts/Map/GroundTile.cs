@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class GroundTile : MonoBehaviour
 {
+    [SerializeField] private WorldStats stats;
+
+    private void Start()
+    {
+        if (stats == null)
+        {
+            Debug.LogError($"{name} : aucun WorldStats assigne.");
+            enabled = false;
+        }
+    }
+
     private void Update()
     {
-        if (MapScroller.Instance == null)
-            return;
-
-        transform.position += MapScroller.Instance.Velocity * Time.deltaTime;
+        transform.position += stats.Velocity * Time.deltaTime;
     }
 }
