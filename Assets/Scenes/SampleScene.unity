@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886dfefd3c5ce43d08393df9754e6606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapScroller
-  speed: 1
+  speed: 5
   direction: {x: 1, y: 0, z: 0}
 --- !u!1001 &723683832146258074
 PrefabInstance:
