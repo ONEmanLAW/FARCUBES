@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance { get; private set; }
+    // Event statique : l'UI peut s'abonner avant meme que le joueur existe.
+    public static event Action OnPlayerDied;
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private Rigidbody body;
@@ -10,24 +12,6 @@ public class Player : MonoBehaviour
     private bool isDead;
 
     public bool IsDead => isDead;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Debug.LogWarning($"{name} : un Player existe deja, celui-ci est detruit.");
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
-
-    private void OnDestroy()
-    {
-        if (Instance == this)
-            Instance = null;
-    }
 
     private void Reset()
     {
@@ -39,6 +23,8 @@ public class Player : MonoBehaviour
         if (isDead)
             return;
 
+        // On preserve x et y : la gravite continue de s'appliquer
+        // pendant le deplacement lateral.
         Vector3 velocity = body.linearVelocity;
         body.linearVelocity = new Vector3(velocity.x, velocity.y, moveZ * speed);
     }
@@ -51,8 +37,7 @@ public class Player : MonoBehaviour
         isDead = true;
         body.linearVelocity = Vector3.zero;
 
-        Debug.Log("Player mort");
-
-        // TODO : ecran de game over, animation, son
+        // ?. : ne declenche rien si personne n'est abonne.
+        OnPlayerDied?.Invoke();
     }
 }
