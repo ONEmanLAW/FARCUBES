@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb225679b624e488a81178b55896e171, type: 3}
   m_Name: BulletRedStats
   m_EditorClassIdentifier: Assembly-CSharp::BulletStats
-  speed: 5
+  speed: 12
   damage: 1

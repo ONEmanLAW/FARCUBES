@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e9d4d26163d44a980970ea200d283b, type: 3}
+  m_Name: SheriffStats
+  m_EditorClassIdentifier: Assembly-CSharp::SheriffStats
+  bulletPrefabs:
+  - {fileID: 3963124478002087715, guid: 2bfb8ac80e80243d98a660f9f9b4886e, type: 3}
+  - {fileID: 5103936418311764035, guid: 176c392ac3db043499c144314f80ef35, type: 3}
+  fireRate: 1
+  fireSounds:
+  - {fileID: 8300000, guid: 32b9acae6ca2447da802e5a1cd27d979, type: 3}
+  - {fileID: 8300000, guid: de77bc06f92654cce94a90651eadf0de, type: 3}
+  - {fileID: 8300000, guid: 3fe874e850825428894658e1875ad567, type: 3}
+  volume: 1
+  pitchRange: {x: 0.95, y: 1.05}
